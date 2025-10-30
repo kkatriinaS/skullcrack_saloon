@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="The Skullcrack Saloon — a cinematic rage-room and stunt-play experience. Book sessions, buy memberships, and schedule group events.">
+  <title>The Skullcrack Saloon — Book the Experience</title>
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="The Skullcrack Saloon">
+  <meta property="og:description" content="Smash props, make movies, relieve stress. Book your Skullcrack Experience today.">
+  <meta property="og:type" content="website">
+
+  <!-- Basic styling (mobile-first) -->
+  <style>
+    :root{
+      --bg:#0b0b0d; /* near-black */
+      --card:#0f1113;
+      --accent-red:#ff2d2d;
+      --accent-blue:#27a2ff;
+      --muted:#9aa3ad;
+      --glass: rgba(255,255,255,0.03);
+      --radius:16px;
+      --max-width:1100px;
+      --gutter:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; 
+      background:linear-gradient(180deg,var(--bg) 0%, #070708 100%);
+      color:#e8eef2; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.45; -webkit-text-size-adjust:100%;
+    }
+
+    /* Layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:18px}
+    header{display:flex;align-items:center;gap:12px;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-red),var(--accent-blue));display:flex;align-items:center;justify-content:center;font-weight:800;color:#0b0b0b;font-size:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+    .site-title{font-size:18px;font-weight:700;letter-spacing:0.6px}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a.cta{background:var(--accent-red);color:#0b0b0b;padding:10px 14px;border-radius:10px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:20px 0;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:22px;box-shadow:0 10px 40px rgba(0,0,0,0.6)}
+    .kicker{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;font-size:12px}
+    h1{margin:8px 0 6px;font-size:28px;line-height:1.05}
+    p.lead{color:var(--muted);margin:0 0 12px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none}
+    .btn-primary{background:var(--accent-red);color:#0b0b0b}
+    .btn-secondary{background:transparent;border:2px solid rgba(255,255,255,0.06);color:var(--accent-blue)}
+
+    /* Features grid */
+    .features{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin-top:14px}
+    .feature{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.03)}
+    .feature h3{margin:0 0 8px;font-size:16px}
+    .meta{font-size:13px;color:var(--muted)}
+
+    /* Section */
+    section{margin-top:26px}
+    .grid-3{display:grid;grid-template-columns:1fr;gap:12px}
+
+    /* Booking form */
+    .booking{display:grid;gap:10px;padding:14px;border-radius:14px;background:linear-gradient(180deg, rgba(40,40,45,0.6), rgba(20,20,22,0.35));border:1px solid rgba(255,255,255,0.03)}
+    label{font-weight:700;font-size:13px}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .row{display:flex;gap:8px}
+    .row > *{flex:1}
+
+    footer{padding:30px 0;color:var(--muted);font-size:14px}
+
+    /* small screens */
+    @media(min-width:760px){
+      .hero{grid-template-columns:1fr 420px}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(min-width:1120px){
+      h1{font-size:42px}
+      .logo{width:72px;height:72px;font-size:28px}
+    }
+
+    /* Utility */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:700}
+    .danger{color:var(--accent-red);font-weight:800}
+    .accent-blue{color:var(--accent-blue);font-weight:800}
+
+    /* Small fancy visual */
+    .arena-preview{height:120px;border-radius:12px;background:linear-gradient(120deg, rgba(255,45,45,0.08), rgba(39,162,255,0.06));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:800}
+
+    /* subtle animations */
+    .logo, .btn{transition:transform .18s ease, box-shadow .18s ease}
+    .btn:hover{transform:translateY(-4px)}
+    .logo:hover{transform:translateY(-4px)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SC</div>
+        <div>
+          <div class="site-title">The Skullcrack Saloon</div>
+          <div class="muted" style="font-size:12px">Smash. Act. Repeat.</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#booking">Book Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <span class="kicker">NEW — Now open for private groups</span>
+          <h1>Be the stunt double. Smash the set. Capture the chaos.</h1>
+          <p class="lead">The Skullcrack Saloon is a cinematic rage-room + stunt-play studio where you and your friends safely smash staged props, create content, and get the adrenaline rush of a lifetime. Safety-first, chaos-second.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#booking">Book a Session</a>
+            <a class="btn btn-secondary" href="#services">See Services</a>
+            <span class="pill">Ages 18+</span>
+          </div>
+
+          <div class="features" style="margin-top:14px">
+            <div class="feature">
+              <h3>Pro-Level Safety</h3>
+              <div class="meta">Padded sets, trained stunt guides, and prop inspections every session.</div>
+            </div>
+            <div class="feature">
+              <h3>Content-Friendly</h3>
+              <div class="meta">Filming-ready spaces, lighting rigs, and fast uploads for creators.</div>
+            </div>
+            <div class="feature">
+              <h3>Groups & Corporate</h3>
+              <div class="meta">Team-building packages and private-event scheduling available.</div>
+            </div>
+            <div class="feature">
+              <h3>Members Save</h3>
+              <div class="meta">Monthly membership options to secure prime times and discounts.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking quick card -->
+        <aside class="hero-card" aria-labelledby="quickbook">
+          <h2 id="quickbook">Quick Book</h2>
+          <div class="muted" style="margin-bottom:10px">Reserve a 45-min Skullcrack Experience</div>
+
+          <form id="quick-booking" class="booking" onsubmit="event.preventDefault(); handleQuickBook();">
+            <label for="q-name">Your name</label>
+            <input id="q-name" required placeholder="Sam Smash">
+
+            <label for="q-email">Email</label>
+            <input id="q-email" type="email" required placeholder="you@example.com">
+
+            <label for="q-date">Date</label>
+            <input id="q-date" type="date" required>
+
+            <label for="q-time">Time</label>
+            <select id="q-time" required>
+              <option value="12:00">12:00 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="20:00">8:00 PM</option>
+            </select>
+
+            <div class="row">
+              <div>
+                <label for="q-party">Party size</label>
+                <select id="q-party" required>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5+</option>
+                </select>
+              </div>
+              <div>
+                <label for="q-type">Experience</label>
+                <select id="q-type" required>
+                  <option>Standard Smash</option>
+                  <option>Movie Stunt</option>
+                  <option>Content Creator Session</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Reserve — $49</button>
+
+            <div id="booking-result" class="muted" style="font-size:13px"></div>
+          </form>
+
+          <div style="margin-top:12px">
+            <div class="arena-preview">Arena Preview (lighting + grip-ready)</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="hero-card">
+          <h2>About The Skullcrack Saloon</h2>
+          <p class="muted">Founded to fuse cinematic stunt-work and playful destruction, Skullcrack is built by stunt-coordinators and set designers to deliver a safe, unforgettable experience. We provide trained guides, protective gear, sanitization, and a variety of staged sets designed for dramatic effect — and great footage.</p>
+
+          <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+            <div style="min-width:220px">
+              <h3 class="accent-blue">Why choose us</h3>
+              <ul class="muted">
+                <li>Safety-first approach and certified crew</li>
+                <li>Multiple themed sets and prop packages</li>
+                <li>Filming support and fast content delivery</li>
+              </ul>
+            </div>
+
+            <div style="min-width:220px">
+              <h3 class="danger">We do NOT use real glass</h3>
+              <p class="muted">All glass and dangerous props are stage-safe (composites, sugar glass, foam, etc.).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <h2>Services & Pricing</h2>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="hero-card">
+            <h3>Standard Smash</h3>
+            <p class="muted">45-minute session, up to 4 people. Includes instructor, basic props, and HD clips.</p>
+            <div style="margin-top:10px"><strong>$49 / person</strong></div>
+            <div style="margin-top:12px"><a class="btn btn-secondary" href="#booking">Book Standard</a></div>
+          </div>
+
+          <div class="hero-card">
+            <h3>Movie Stunt</h3>
+            <p class="muted">90-minute cinematic session with stunt coordinator, multiple set changes, and advanced props.</p>
+            <div style="margin-top:10px"><strong>$149 / person</strong></div>
+            <div style="margin-top:12px"><a class="btn btn-secondary" href="#booking">Book Movie Stunt</a></div>
+          </div>
+
+          <div class="hero-card">
+            <h3>Corporate & Private Events</h3>
+            <p class="muted">Custom packages, team-building facilitation, catering add-ons, and AV support. Email us for a custom quote.</p>
+            <div style="margin-top:12px"><a class="btn btn-secondary" href="#contact">Inquire</a></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking page (expanded) -->
+      <section id="booking">
+        <h2>Booking</h2>
+        <div class="hero-card" style="margin-top:12px">
+          <h3>Full Booking</h3>
+          <p class="muted">Complete booking form — collects details and prepares your invoice. Payment integration examples are noted in the code comments below.</p>
+
+          <form id="full-booking" class="booking" onsubmit="event.preventDefault(); handleFullBooking();">
+            <label for="name">Full name</label>
+            <input id="name" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="Optional">
+
+            <div class="row">
+              <div>
+                <label for="date">Preferred date</label>
+                <input id="date" type="date" required>
+              </div>
+              <div>
+                <label for="time">Preferred time</label>
+                <select id="time" required>
+                  <option>12:00</option>
+                  <option>14:00</option>
+                  <option>16:00</option>
+                  <option>18:00</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="notes">Notes / special requests</label>
+            <textarea id="notes" rows="3"></textarea>
+
+            <label>Payment</label>
+            <div class="muted" style="font-size:13px">Payment is processed securely via Stripe or PayPal. (This demo includes a placeholder.)</div>
+
+            <button class="btn btn-primary" type="submit">Request Booking</button>
+            <div id="full-result" class="muted" style="font-size:13px;margin-top:8px"></div>
+          </form>
+
+          <details style="margin-top:12px;color:var(--muted)">
+            <summary>Implementation notes</summary>
+            <div class="muted" style="margin-top:8px">
+              <!-- Notes about integrating payments, storage, and media upload. -->
+              <ul>
+                <li>Use Stripe Checkout or Payment Intents for secure card handling.</li>
+                <li>Send booking requests to a server endpoint (e.g. /api/book) that validates availability and sends confirmation emails.</li>
+                <li>Store media clips in S3-compatible storage and generate short-lived signed URLs for downloads.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="hero-card" style="margin-top:12px">
+          <p class="muted">Questions? Email <a href="mailto:hello@skullcrack.example" class="muted">hello@skullcrack.example</a> or call <span class="muted">+1 (555) 555-5555</span>.</p>
+          <p class="muted">Address: 123 Stunt Row, Industrial District</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>The Skullcrack Saloon</strong><br>
+          <span class="muted">© 2025 Skullcrack Entertainment</span>
+        </div>
+        <div class="muted">Built with safety-first stunt creds.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function handleQuickBook(){
+      const res = document.getElementById('booking-result');
+      res.textContent = 'Thanks! Your hold is requested — we will email a confirmation.';
+    }
+    function handleFullBooking(){
+      const res = document.getElementById('full-result');
+      res.textContent = 'Booking request received. Check your email for next steps.';
+    }
+  </script>
+</body>
+</html>
