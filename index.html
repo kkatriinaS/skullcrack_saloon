@@ -37,7 +37,13 @@
     .container{max-width:var(--max-width);margin:0 auto;padding:18px}
     header{display:flex;align-items:center;gap:12px;padding:12px 0}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent-red),var(--accent-blue));display:flex;align-items:center;justify-content:center;font-weight:800;color:#0b0b0b;font-size:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+      .logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  background: url("images/logo.png") center/cover no-repeat;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
     .site-title{font-size:18px;font-weight:700;letter-spacing:0.6px}
     nav{margin-left:auto}
     nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
@@ -302,17 +308,6 @@
             <div id="full-result" class="muted" style="font-size:13px;margin-top:8px"></div>
           </form>
 
-          <details style="margin-top:12px;color:var(--muted)">
-            <summary>Implementation notes</summary>
-            <div class="muted" style="margin-top:8px">
-              <!-- Notes about integrating payments, storage, and media upload. -->
-              <ul>
-                <li>Use Stripe Checkout or Payment Intents for secure card handling.</li>
-                <li>Send booking requests to a server endpoint (e.g. /api/book) that validates availability and sends confirmation emails.</li>
-                <li>Store media clips in S3-compatible storage and generate short-lived signed URLs for downloads.</li>
-              </ul>
-            </div>
-          </details>
         </div>
       </section>
 
@@ -348,3 +343,4 @@
   </script>
 </body>
 </html>
+
